@@ -1,0 +1,11 @@
+面向接口的mapper开发
+
+com.tedu.bean
+com.tedu.controller
+com.tedu.service
+com.tedu.mapper  一个是mapper接口，一个是mapper实现类（被xml代替）
+
+开发mapper层要经历的步骤
+1.编写接口类中的方法
+2.按接口中新的方法的定义（方法的完整签名）来编写xml中的标签方法
+3.编写测试代码

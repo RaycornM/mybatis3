@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- namespace="本xml对应的接口全路径" -->
+<mapper namespace="com.tedu.mapper.EmpMapper">
+<!-- 本select id 必须和接口中的方法名称相同
+	 传入值和返回值必须和方法的参数与返回值相同 -->
+  <select id="selectAllEmp" resultType="com.tedu.bean.EmpBean">
+    select * from emp
+  </select>
+  <!-- 是一个查询语句 类型中除开基本类型和String 其他都要写全路径-->
+  <select id="selectEmpById" parameterType="int"
+  resultType="com.tedu.bean.EmpBean">
+  	select * from emp where id = #{id}
+  </select>
+  
+  <!-- 插入语句 在insert update delete标签中默认返回值int  不用写-->
+  <insert id="insertEmp" parameterType="com.tedu.bean.EmpBean">
+  	insert into emp(name,sex,salary,deparmentid,m_id) 
+  	value(#{name},#{sex},#{salary},#{deparmentid},#{m_id})
+  </insert>
+  <!-- emp(字段）是数据库表字段，和数据库表字段名称一样
+  	   #{name}是bean中的属性字段，和bean中的属性名称一样 -->
+</mapper>
